@@ -1,0 +1,81 @@
+/* Big tablet to 1160px (widths smaller than the 1160px row) */
+@media only screen and (max-width: 1160px) {
+
+
+    }
+
+/* Small tablet to big tablet: from 933px to 1023px */ 
+@media only screen and (max-width:1023px) {
+    
+ 
+    
+    }
+
+/* Small tablet to big tablet: from 769px to 933px */ 
+@media only screen and (max-width:991px) {
+    
+
+
+}
+
+/* Small tablet to big tablet: from 769px to 933px */ 
+@media only screen and (max-width:933px) {
+   
+
+}
+
+/* Small phones to small tablets: from 600px to 768px */
+@media only screen and (max-width: 768px) {
+  
+}
+
+/* Small phones to small tablets: from 481px to 600px */
+@media only screen and (max-width: 600px) {
+    
+
+}
+
+/* Small phones: from 480 to 530px */
+@media only screen and (max-width: 530px) {
+    
+
+}
+
+
+/* Small phones: from 320 to 480px */
+@media only screen and (max-width: 480px) {
+   
+
+    
+}
+
+/* Small phones: from 0 to 430px */
+@media only screen and (max-width: 430px) {
+    
+}
+
+/* Small phones: from 0 to 430px */
+@media only screen and (max-width: 392px) {
+   
+}
+
+/* Small phones: from 0 to 430px */
+@media only screen and (max-width: 384px) {
+   
+}
+
+/* Small phones: from 0 to 430px */
+@media only screen and (max-width: 383px) {
+    
+}
+/* Small phones: from 0 to 430px */
+@media only screen and (max-width: 368px) {
+    
+}
+
+/* Small phones: from 0 to 320px */
+@media only screen and (max-width: 320px) {
+   
+
+
+}

@@ -1,0 +1,13 @@
+#home-section {
+    background: url(https://siplay-website-content-user.s3.amazonaws.com/Portal/1692/Content/Backgrounds/616101_433900056657833_1606312357_o.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-attachment: fixed;
+    min-height: 683px;
+    min-width: auto;
+}
+
+#home-section .form-group label {
+    font-size: 26px;
+    font-weight: 700;
+}
