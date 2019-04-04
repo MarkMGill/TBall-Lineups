@@ -106,3 +106,60 @@ function displayLineups(lineupsArr, objPlayers, numInnings) {
             row.insertCell(j + 2).innerHTML = newObjPlayers[i].positions[j];
         }
     }
+    
+    /*
+    let row;
+    for(let i = 0; i < lineupsArr.length; i++) {
+        for(let j = 0; j < objPlayers.length; j++) {
+            if(lineupsArr[i] === objPlayers[j].name) {
+                row = jsDisplayPlayer.insertRow(j);
+                row.insertCell(0).innerHTML = (j + 1);
+                row.insertCell(1).innerHTML = objPlayers[j].name;
+                for(let k = 0; k < numInnings; k++) {
+                    row.insertCell(k + 2).innerHTML = objPlayers[j].positions[k];
+                }
+            }
+        }
+    }
+    */
+    
+    
+    /*
+    // display player lineups
+    let flag = true;
+    for(let i = 0; i < lineupsArr.length; i++) {
+        let bgLightContent = '<tr><th scope="row">' + [i + 1] + '</th><td>' + lineupsArr[i] + '</td><td>jdoe@yeah</td></tr>';
+        let bgWhiteContent = '<tr class="bg-white"><th scope="row">' + [i + 1] + '</th><td>' + lineupsArr[i] + '</td><td>jdoe@yeah</td></tr>';
+        if(flag === true) {
+            jsDisplayPlayer.insertAdjacentHTML('beforebegin', bgLightContent
+                );
+        } else if(flag === false) {
+            jsDisplayPlayer.insertAdjacentHTML('beforebegin', bgWhiteContent 
+                );
+        }
+        (flag === true) ? flag = false : flag = true;
+    }
+    
+    let row = jsDisplayPlayer.insertRow(0);
+    row.insertCell(0).innerHTML = '1';
+    row.insertCell(1).innerHTML = 'John';
+    row.insertCell(2).innerHTML = 'Right Field';
+    row.insertCell(3).innerHTML = 'Right Field';
+    
+    row = jsDisplayPlayer.insertRow(1);
+    row.insertCell(0).innerHTML = '1';
+    row.insertCell(1).innerHTML = 'John';
+    row.insertCell(2).innerHTML = 'Right Field';
+    row.insertCell(3).innerHTML = 'Right Field';
+    
+    row = jsDisplayPlayer.insertRow(2);
+    row.insertCell(0).innerHTML = '1';
+    row.insertCell(1).innerHTML = 'John';
+    row.insertCell(2).innerHTML = 'Right Field';
+    row.insertCell(3).innerHTML = 'Right Field';
+    */
+}
+
+
+
+
