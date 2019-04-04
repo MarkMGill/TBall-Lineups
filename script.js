@@ -106,6 +106,3 @@ function displayLineups(lineupsArr, objPlayers, numInnings) {
             row.insertCell(j + 2).innerHTML = newObjPlayers[i].positions[j];
         }
     }
-    
- 
-
