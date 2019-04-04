@@ -18,7 +18,7 @@
         <div class="home-inner container">
             <div class="row">
                 <div class="col text-center py-5">
-                    <img src="baseball_logo.jpg" class="img-fluid rounded mb-5" height="250px" width="250px">
+                    <img src="CSS/img/baseball_logo.jpg" class="img-fluid rounded mb-5" height="250px" width="250px">
                     <div>
                         <div class="col-lg-9 col-md-12 float-right mb-5">
                             <div class="card border-dark text-center">
@@ -28,7 +28,7 @@
                                         <div class="form-group">
                                             <div class="d-inline">
                                                 <label for="name">Team Name</label>
-                                                <input type="text" class="form-control mb-2 js__player" id="player1">
+                                                <input type="text" class="form-control mb-2" id="js__teamName">
                                                 <label for="">Number of Innings</label>
                                                 <select class="form-control" id="js__numOfInnings">
                                                     <option>1</option>
@@ -59,7 +59,7 @@
                                     </form>
                                     <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#lineupsModal" id="btnLineups">Generate Lineups</button>
                                 </div>
-                                <div class="card-footer bg-dark text-light">Panel Footer</div>
+                                <div class="card-footer bg-dark text-light py-4"></div>
                             </div>
                         </div>
                         <div class="col-lg-3 col-md-12 float-left">
@@ -83,14 +83,14 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">Team Lineups</h5>
+                    <h5 class="modal-title" id="js__displayTeam"></h5>
                     <button class="close" data-dismiss="modal">
                         <span>&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
                     <div>
-                        <table class="table table-striped">
+                        <table class="table table-striped" id="clearTable">
                             <thead>
                                 <tr id="js__displayInning">
                                     <th>#</th>
