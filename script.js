@@ -107,21 +107,5 @@ function displayLineups(lineupsArr, objPlayers, numInnings) {
         }
     }
     
-    /*
-    let row;
-    for(let i = 0; i < lineupsArr.length; i++) {
-        for(let j = 0; j < objPlayers.length; j++) {
-            if(lineupsArr[i] === objPlayers[j].name) {
-                row = jsDisplayPlayer.insertRow(j);
-                row.insertCell(0).innerHTML = (j + 1);
-                row.insertCell(1).innerHTML = objPlayers[j].name;
-                for(let k = 0; k < numInnings; k++) {
-                    row.insertCell(k + 2).innerHTML = objPlayers[j].positions[k];
-                }
-            }
-        }
-    }
-    
-
-
+ 
 
