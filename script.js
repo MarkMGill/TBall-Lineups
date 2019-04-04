@@ -121,36 +121,7 @@ function displayLineups(lineupsArr, objPlayers, numInnings) {
             }
         }
     }
-    */
     
-    
-    /*
-    // display player lineups
-    let flag = true;
-    for(let i = 0; i < lineupsArr.length; i++) {
-        let bgLightContent = '<tr><th scope="row">' + [i + 1] + '</th><td>' + lineupsArr[i] + '</td><td>jdoe@yeah</td></tr>';
-        let bgWhiteContent = '<tr class="bg-white"><th scope="row">' + [i + 1] + '</th><td>' + lineupsArr[i] + '</td><td>jdoe@yeah</td></tr>';
-        if(flag === true) {
-            jsDisplayPlayer.insertAdjacentHTML('beforebegin', bgLightContent
-                );
-        } else if(flag === false) {
-            jsDisplayPlayer.insertAdjacentHTML('beforebegin', bgWhiteContent 
-                );
-        }
-        (flag === true) ? flag = false : flag = true;
-    }
-    
-    let row = jsDisplayPlayer.insertRow(0);
-
-}
-
-
-
-
-
-
-
-
 
 
 
