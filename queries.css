@@ -26,7 +26,10 @@
 
 /* Small phones to small tablets: from 600px to 768px */
 @media only screen and (max-width: 768px) {
-  
+      
+    #lineupsModal {
+        overflow-x: visible;
+    } 
 }
 
 /* Small phones to small tablets: from 481px to 600px */
