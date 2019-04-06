@@ -6,29 +6,25 @@ const jsDisplayInning = document.getElementById('js__displayInning');
 btnLineups.addEventListener('click', function() {
    
     let jsNumOfInnings = Number(document.getElementById('js__numOfInnings').value);
-    let playersArr = [];
     let players = document.querySelectorAll('.js__player');
     
     // convert node list of players to array list of players and remove empty spaces
     players.forEach(cur => {
-        if(cur.value.trim() !== '') {playersArr.push(cur.value)} 
+        if(cur.value.trim() !== '') {playersObj.push(
+        {
+                name: cur.value,
+                positions: []
+            }
+        )} 
     });
     
-    // create an array of player objects including names and array of positions
-    for(let i = 0; i < playersArr.length; i++) {
-        playersObj[i] = {
-            name: playersArr[i],
-            positions: []
-        }
-    }
-    
+    console.log(playersObj);
     // all the magic happens
-    let lineups = randomizeLineups(playersArr);
-    console.log(`lineups is ${lineups}`);
-    assignPositions(playersObj, jsNumOfInnings);
+    let lineups = randomizeLineups(playersObj);
+    assignPositions(lineups, jsNumOfInnings);
     clearDisplay();
-    displayLineups(lineups, playersObj, jsNumOfInnings);
-
+    //console.log(lineups);
+    displayLineups(lineups, jsNumOfInnings);
 });
 
 function randomizeLineups(arr) {
@@ -52,18 +48,18 @@ function assignPositions(playersArray, numOfInnings) {
         // list all positions in an array and remove additional positions to match amount of players on team
         let positions = ['Pitcher', '1st Base', '2nd Base', '3rd Base', 'Shortstop', 'Left Field', 'Right Field', 'Center Field', 'Right Center Field', 'Left Center Field', 'Bench/Optional', 'Bench/Optional', 'Bench/Optional', 'Bench/Optional', 'Bench/Optional'];
         positions.splice(playersArray.length);
-        
-        // loop through randomPositions and add positions to each player in playersObj array
+        console.log(playersArray);
+        console.log(positions);
+        // loop through randomPositions and add positions to each player in players array
         for(let i = 0; i < positions.length; i++) {
             if(i + index > positions.length - 1) {
-                playersObj[i].positions.push(positions[(i + index) % positions.length]);
+                playersArray[i].positions.push(positions[(i + index) % positions.length]);
             } else {
-                playersObj[i].positions.push(positions[i + index]);
+                playersArray[i].positions.push(positions[i + index]);
             }
         }
-        index += 3;
+        index += (playersArray.length % 3 === 0) ? 4 : 3;
     }
-    console.log(playersObj);
 }
 
 function clearDisplay() {
@@ -73,7 +69,7 @@ function clearDisplay() {
     jsDisplayInning.innerHTML = '<th>#</th><th>Name</th>';
 }
 
-function displayLineups(lineupsArr, objPlayers, numInnings) {
+function displayLineups(lineupsArr, numInnings) {
     
     // display team name
     let teamName = document.getElementById('js__teamName').value;
@@ -86,79 +82,19 @@ function displayLineups(lineupsArr, objPlayers, numInnings) {
         jsDisplayInning.insertAdjacentHTML('beforeend', 
                 '<th>Inning ' + i + '</th>'); 
     }
-    
-    // need to organize objPlayers in same order as lineupsArr
-    let newObjPlayers = [];
-    for(let i = 0; i < lineupsArr.length; i++) {
-        for(let j = 0; j < objPlayers.length; j++) {
-            if(lineupsArr[i] === objPlayers[j].name) {
-                newObjPlayers.push(objPlayers[j]);
-            }
-        }
-    }
-    
+
     let row; 
-    for(let i = 0; i < newObjPlayers.length; i++) {
+    for(let i = 0; i < lineupsArr.length; i++) {
         row = jsDisplayPlayer.insertRow(i);
         row.insertCell(0).innerHTML = (i + 1);
-        row.insertCell(1).innerHTML = newObjPlayers[i].name;
-        for(let j = 0; j < newObjPlayers[i].positions.length; j++) {
-            row.insertCell(j + 2).innerHTML = newObjPlayers[i].positions[j];
+        row.insertCell(1).innerHTML = lineupsArr[i].name;
+        for(let j = 0; j < lineupsArr[i].positions.length; j++) {
+            row.insertCell(j + 2).innerHTML = lineupsArr[i].positions[j];
         }
     }
-    
-    /*
-    let row;
-    for(let i = 0; i < lineupsArr.length; i++) {
-        for(let j = 0; j < objPlayers.length; j++) {
-            if(lineupsArr[i] === objPlayers[j].name) {
-                row = jsDisplayPlayer.insertRow(j);
-                row.insertCell(0).innerHTML = (j + 1);
-                row.insertCell(1).innerHTML = objPlayers[j].name;
-                for(let k = 0; k < numInnings; k++) {
-                    row.insertCell(k + 2).innerHTML = objPlayers[j].positions[k];
-                }
-            }
-        }
-    }
-    */
-    
-    
-    /*
-    // display player lineups
-    let flag = true;
-    for(let i = 0; i < lineupsArr.length; i++) {
-        let bgLightContent = '<tr><th scope="row">' + [i + 1] + '</th><td>' + lineupsArr[i] + '</td><td>jdoe@yeah</td></tr>';
-        let bgWhiteContent = '<tr class="bg-white"><th scope="row">' + [i + 1] + '</th><td>' + lineupsArr[i] + '</td><td>jdoe@yeah</td></tr>';
-        if(flag === true) {
-            jsDisplayPlayer.insertAdjacentHTML('beforebegin', bgLightContent
-                );
-        } else if(flag === false) {
-            jsDisplayPlayer.insertAdjacentHTML('beforebegin', bgWhiteContent 
-                );
-        }
-        (flag === true) ? flag = false : flag = true;
-    }
-    
-    let row = jsDisplayPlayer.insertRow(0);
-    row.insertCell(0).innerHTML = '1';
-    row.insertCell(1).innerHTML = 'John';
-    row.insertCell(2).innerHTML = 'Right Field';
-    row.insertCell(3).innerHTML = 'Right Field';
-    
-    row = jsDisplayPlayer.insertRow(1);
-    row.insertCell(0).innerHTML = '1';
-    row.insertCell(1).innerHTML = 'John';
-    row.insertCell(2).innerHTML = 'Right Field';
-    row.insertCell(3).innerHTML = 'Right Field';
-    
-    row = jsDisplayPlayer.insertRow(2);
-    row.insertCell(0).innerHTML = '1';
-    row.insertCell(1).innerHTML = 'John';
-    row.insertCell(2).innerHTML = 'Right Field';
-    row.insertCell(3).innerHTML = 'Right Field';
-    */
 }
+
+
 
 
 
