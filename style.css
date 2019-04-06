@@ -1,3 +1,8 @@
+html {
+    /*overflow-y: scroll;*/
+    /*margin-left: calc(100vw - 100%);*/
+}
+
 #home-section {
     background: url(https://siplay-website-content-user.s3.amazonaws.com/Portal/1692/Content/Backgrounds/616101_433900056657833_1606312357_o.jpg);
     background-repeat: no-repeat;
@@ -20,3 +25,20 @@
     width: auto;
     min-width: 300px;   
 }
+
+#lineupsModal {
+    overflow-x: visible;
+} 
+
+
+
+
+
+
+
+
+
+
+
+
+
