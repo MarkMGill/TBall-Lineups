@@ -325,6 +325,18 @@ function displayLineups(lineupsArr, numInnings) {
     //--->save single field data > end
 
 
+    /************ CREATE PRINTABLE DOCUMENT *********/
+    /************************************************/
+
+$('.js__printTable').click(function() {
+    let printme = document.querySelector('.table');
+    let wme = window.open("", "", "width=900,height=700");
+    wme.document.write(printme.outerHTML);
+    wme.document.close();
+    wme.focus();
+    wme.print();
+    wme.close();
+});
 
 
 
