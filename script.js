@@ -42,12 +42,14 @@ function randomizeLineups(arr) {
 
 function assignPositions(playersArray, numOfInnings) {
     
+    const catcher = document.getElementById('js__catcher').value;
     let index = 0;
     for(let i = 0; i < numOfInnings; i++) {
         
-        // list all positions in an array and remove additional positions to match amount of players on team
+        // list all positions in an array, add catcher if selected Yes, and remove additional positions to match amount of players on team
         let positions = ['Pitcher', '1st Base', '2nd Base', '3rd Base', 'Shortstop', 'Left Field', 'Right Field', 'Center Field', 'Right Center Field', 'Left Center Field', 'Bench/Optional', 'Bench/Optional', 'Bench/Optional', 'Bench/Optional', 'Bench/Optional'];
-        positions.splice(playersArray.length);
+        if(catcher === 'Yes') {positions.unshift('Catcher');}
+	positions.splice(playersArray.length);
         console.log(playersArray);
         console.log(positions);
         // loop through randomPositions and add positions to each player in players array
