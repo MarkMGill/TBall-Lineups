@@ -22,7 +22,6 @@ btnLineups.addEventListener('click', function() {
     // all the magic happens
     let lineups = randomizeLineups(playersObj);
     assignPositions(lineups, jsNumOfInnings);
-    clearDisplay();
     
     displayLineups(lineups, jsNumOfInnings);
 });
