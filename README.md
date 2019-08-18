@@ -9,5 +9,6 @@ After lineups are generated, you can edit an inidividual field by clicking in it
 # Technologies Used
 * HTML/CSS
 * JavaScript
+* jQuery
 * Bootstrap
 * Responsive Web Design
