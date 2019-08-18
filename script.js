@@ -18,12 +18,12 @@ btnLineups.addEventListener('click', function() {
         )} 
     });
     
-    console.log(playersObj);
+    
     // all the magic happens
     let lineups = randomizeLineups(playersObj);
     assignPositions(lineups, jsNumOfInnings);
     clearDisplay();
-    //console.log(lineups);
+    
     displayLineups(lineups, jsNumOfInnings);
 });
 
@@ -50,8 +50,7 @@ function assignPositions(playersArray, numOfInnings) {
         let positions = ['Pitcher', '1st Base', '2nd Base', '3rd Base', 'Shortstop', 'Left Field', 'Right Field', 'Center Field', 'Right Center Field', 'Left Center Field', 'Bench/Optional', 'Bench/Optional', 'Bench/Optional', 'Bench/Optional', 'Bench/Optional'];
         if(catcher === 'Yes') {positions.unshift('Catcher');}
 	positions.splice(playersArray.length);
-        console.log(playersArray);
-        console.log(positions);
+        
         // loop through randomPositions and add positions to each player in players array
         for(let i = 0; i < positions.length; i++) {
             if(i + index > positions.length - 1) {
@@ -62,13 +61,6 @@ function assignPositions(playersArray, numOfInnings) {
         }
         index += (playersArray.length % 3 === 0) ? 4 : 3;
     }
-}
-
-function clearDisplay() {
-    
-    // clear modal box before displaying lineups
-    //$("#clearTable").find("tr:gt(0)").remove();
-    //jsDisplayInning.innerHTML = '<th>#</th><th>Name</th>';
 }
 
 function displayLineups(lineupsArr, numInnings) {
@@ -271,23 +263,6 @@ function displayLineups(lineupsArr, numInnings) {
         .removeClass('bg-light border rounded')
         .css('padding','') 
         
-        /*
-        //--->get row data > start
-        var arr = {}; 
-        tbl_row.find('.row_data').each(function(index, val) 
-        {   
-            var col_name = $(this).attr('col_name');  
-            var col_val  =  $(this).html();
-            arr[col_name] = col_val;
-        });
-        //--->get row data > end
-
-        //use the "arr"	object for your ajax call
-        $.extend(arr, {row_id:row_id});
-
-        //out put to show
-        $('.post_msg').html( '<pre class="bg-success">'+JSON.stringify(arr, null, 2) +'</pre>')
-        */
 
     });
     //--->save whole row entery > end
@@ -310,19 +285,7 @@ function displayLineups(lineupsArr, numInnings) {
         var row_div = $(this)			
         .removeClass('bg-light border rounded') //add bg css
         .css('padding','')
-        /*
-        var col_name = row_div.attr('col_name'); 
-        var col_val = row_div.html(); 
-
-        var arr = {};
-        arr[col_name] = col_val;
-
-        //use the "arr"	object for your ajax call
-        $.extend(arr, {row_id:row_id});
-
-        //out put to show
-        $('.post_msg').html( '<pre class="bg-success">'+JSON.stringify(arr, null, 2) +'</pre>');
-        */
+      
     })	
     //--->save single field data > end
 
